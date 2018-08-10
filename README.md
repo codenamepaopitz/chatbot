@@ -18,7 +18,7 @@ Medicare Chatbot
 
 3. Run the python server.
     ```bash
-    python main.py
+    python app.py
     ```
 4. Open **http://127.0.0.1:5000** in your browser.
 
@@ -29,4 +29,4 @@ Medicare Chatbot
 3. Url is: http://localhost:5000/ask
 4. On the Body Section choose form-urlencoded
 5. Key: messageText
-   Value: Anythin you want to ask.
+   Value: Anything you want to ask.
