@@ -11,7 +11,7 @@
         .fixed-panel {
             min-height: 400px;
             max-height: 400px;
-            background-color: #19313c;
+            background-color: #ffffff;
             color: white;
             overflow: auto;
         }
@@ -33,38 +33,45 @@
             box-shadow: 0 1px 1px rgba(0,0,0,.05);
         }
         .panel-info {
-            border-color: #0c2735;
+            border-color: #5fcf80;
+            border-width: 11px;
         }
         .panel-info>.panel-heading {
             color: white;
-            background-color: #0c2735;
-            border-color: #0c2735;
+            background-color: #5fcf80;
+            border-color: #5fcf80;
         }
         .panel-footer {
             padding: 10px 15px;
-            background-color: #0c2735;
-            border-top: 1px solid #0c2735;
+            background-color: #ffffff;
+            border-top: 1px solid;
             border-bottom-right-radius: 3px;
             border-bottom-left-radius: 3px
         }
+
+        .btn-info {
+            color: #fff;
+            background-color: #674993 !important;
+            border-color: #00000029 !important;
+        }
         body {
-            background: rgb(96,143,149); /* Old browsers */
-            background: -moz-linear-gradient(-45deg, rgba(96,143,149,1) 0%, rgba(0,133,136,1) 9%, rgba(12,36,73,1) 52%, rgba(26,30,59,1) 100%); /* FF3.6-15 */
-            background: -webkit-linear-gradient(-45deg, rgba(96,143,149,1) 0%,rgba(0,133,136,1) 9%,rgba(12,36,73,1) 52%,rgba(26,30,59,1) 100%); /* Chrome10-25,Safari5.1-6 */
-            background: linear-gradient(135deg, rgba(96,143,149,1) 0%,rgba(0,133,136,1) 9%,rgba(12,36,73,1) 52%,rgba(26,30,59,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#608f95', endColorstr='#1a1e3b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+            background: #ffffff;
+            background: -moz-linear-gradient(top, #ffffff 0%, #f3f3f3 59%, #ededed 68%, #ffffff 100%); 
+            background: -webkit-linear-gradient(top, #ffffff 0%,#f3f3f3 59%,#ededed 68%,#ffffff 100%); 
+            background: linear-gradient(to bottom, #ffffff 0%,#f3f3f3 59%,#ededed 68%,#ffffff 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );
         }
         </style>
     </head>
     <body>
-        <div class="container background-color: rgb(255,0,255);">
+        <div class="container background-color: #ffffff;">
             <div class="row">
-                <h3 class="text-center"><font color="white"><strong> Chat With Me!</strong> </font></h3>
+                <h3 class="text-center"><font color="#5fcf80"><strong> CHAT WITH ME</strong> </font></h3>
                 ​
                 <div class="col-md-4 col-md-offset-4">
                     <div id="chatPanel" class="panel panel-info">
                         <div class="panel-heading">
-                            <strong><span class="glyphicon glyphicon-globe"></span> I Am Learning Through A.I.M.L. </strong>
+                            <strong><span class="glyphicon glyphicon-comment"></span> I Am Learning Through A.I.M.L. </strong>
                         </div>
                         <div class="panel-body fixed-panel">
                             <ul class="media-list">
@@ -100,7 +107,7 @@
             $('#chatbot-form').submit(function(e) {
                 e.preventDefault();
                 var message = $('#messageText').val();
-                $(".media-list").append('<li class="media"><div class="media-body"><div class="media"><div style = "text-align:right; color : #2EFE2E" class="media-body">' + message + '<hr/></div></div></div></li>');
+                $(".media-list").append('<li class="media"><div class="media-body"><div class="media"><div style = "text-align:right; color : #2EFE2E; font-size: 20px;" class="media-body">' + message + '<hr/></div></div></div></li>');
 
                 $.ajax({
                     type: "POST",
@@ -113,7 +120,7 @@
                         $('#messageText').val('');
                         var answer = response.answer;
                         const chatPanel = document.getElementById("chatPanel");
-                        $(".media-list").append('<li class="media"><div class="media-body"><div class="media"><div style = "color : white" class="media-body">' + answer + '<hr/></div></div></div></li>');
+                        $(".media-list").append('<li class="media"><div class="media-body"><div class="media"><div style = "color : #674993; font-size: 20px;" class="media-body">' + answer + '<hr/></div></div></div></li>');
                         $(".fixed-panel").stop().animate({ scrollTop: $(".fixed-panel")[0].scrollHeight}, 1000);
                     },
                     error: function(error) {
